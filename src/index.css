@@ -95,7 +95,7 @@ header h1 {
     border-radius: 1rem;
     padding: 1rem;
     border: none;
-    flex: 1;
+    width: 100%;
     font-size: 1.6rem;
 }
 .formulario input[type="submit"] {
@@ -207,7 +207,7 @@ header h1 {
 }
 .contenido-presupuesto p.negativo,
 .contenido-presupuesto p.negativo span {
-    color: red;
+    color: #dc2626; 
 }
 .contenido-presupuesto span {
     font-weight: 900;
@@ -240,6 +240,14 @@ main {
     align-items: center;
     gap: 2rem;
 }
+
+@media (max-width: 500px) {
+    .filtros .campo {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
 .filtros label {
     font-size: 3rem;
     font-weight: 900;
@@ -273,6 +281,12 @@ main {
     gap: 2rem;
     margin-bottom: 2rem;
     width: 100%;
+}
+
+@media (max-width: 480px) {
+    .gasto {
+        flex-direction: column;
+    }   
 }
 
 .cantidad-gasto {
@@ -361,6 +375,13 @@ main {
     transition-timing-function: ease-in;
     opacity: 0;
 }
+
+@media (max-width: 450px) {
+    .modal .formulario {
+        width: 310px;
+    }
+}
+
 .modal label {
     color: var(--blanco);
 }
