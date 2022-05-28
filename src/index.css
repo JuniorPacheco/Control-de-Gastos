@@ -286,7 +286,12 @@ main {
 @media (max-width: 480px) {
     .gasto {
         flex-direction: column;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
     }   
+    .cantidad-gasto {
+        margin: 0;
+    }
 }
 
 .cantidad-gasto {
