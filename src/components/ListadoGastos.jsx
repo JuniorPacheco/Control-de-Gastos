@@ -6,7 +6,6 @@ const ListadoGastos = ({
   eliminarGasto,
   filtro,
   gastosFiltrados}) => {
-    console.log(gastosFiltrados);
   return (
       <div className="listado-gastos contenedor">
 
