@@ -6,7 +6,7 @@ import {
   TrailingActions,
 } from 'react-swipeable-list';
 import 'react-swipeable-list/dist/styles.css';
-import { formatearFecha } from "../helpers"
+import { formatearFecha, formatearCantidad } from "../helpers"
 import IconoAhorro from '../img/icono_ahorro.svg'
 import IconoCasa from '../img/icono_casa.svg'
 import IconoComida from '../img/icono_comida.svg'
@@ -69,7 +69,7 @@ const Gasto = ({gasto, setGastoEditar, eliminarGasto}) => {
                     </p>
                 </div>
             </div>
-                <p className="cantidad-gasto">${cantidad}</p>
+                <p className="cantidad-gasto">{formatearCantidad(cantidad)}</p>
         </div>
       </SwipeableListItem>
     </SwipeableList>
