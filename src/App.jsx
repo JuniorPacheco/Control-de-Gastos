@@ -5,6 +5,7 @@ import ListadoGastos from './components/ListadoGastos';
 import Filtros from './components/Filtros';
 import { generarId } from './helpers';
 import IconoNuevoGasto from './img/nuevo-gasto.svg'
+import ModalCambioPresupuesto from './components/ModalCambioPresupuesto';
 
 function App() {
   const [gastos, setGastos] = useState(
@@ -17,6 +18,7 @@ function App() {
   const [isValidPresupuesto, setIsValidPresupuesto] = useState(false);
 
   const [modal, setModal] = useState(false);
+  const [nuevoPresupuesto, setNuevoPresupuesto] = useState(false)
   const [animarModal, setAnimarModal] = useState(false);
 
   const [gastoEditar, setGastoEditar] = useState({});
@@ -96,6 +98,7 @@ function App() {
         setPresupuesto={setPresupuesto} 
         isValidPresupuesto={isValidPresupuesto} 
         setIsValidPresupuesto={setIsValidPresupuesto} 
+        setNuevoPresupuesto={setNuevoPresupuesto}
         />
 
         {isValidPresupuesto && (
@@ -133,6 +136,14 @@ function App() {
           setGastoEditar={setGastoEditar}
           />
         )}
+
+        {
+          nuevoPresupuesto &&
+          <ModalCambioPresupuesto 
+            setPresupuesto={setPresupuesto}
+            setNuevoPresupuesto={setNuevoPresupuesto}
+          />
+        }
       </div>
   )
 }
