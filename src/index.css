@@ -353,12 +353,13 @@ main {
 }
 
 .modal {
-    position: absolute;
+    position: sticky;
     background-color: rgb(0 0 0 / 0.92);
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    min-height: 100vh;
 }
 .modal .cerrar-modal {
     position: absolute;
@@ -430,4 +431,42 @@ body .modal {
     align-items: center;
     font-size: 2.4rem;
     text-align: right;
+}
+
+
+/* Cambio de presupuesto */
+
+.cambio__button {
+    background-color: var(--azul);
+    color: var(--blanco);
+    text-transform: uppercase;
+    margin: 0 auto;
+    display: block;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 2rem;
+    margin-top: 1rem;
+    border-radius: 4px;
+}
+
+.cambio__button:hover {
+    background-color: #1048a4;
+}
+
+.button__cambioPresupuesto {
+    background-color: var(--azul);
+    color: var(--blanco);
+    text-transform: uppercase;
+    margin: 0 auto;
+    display: block;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 2rem;
+    margin-top: 1rem;
+    border-radius: 4px;
+    border: none;
+}
+
+.button__cambioPresupuesto:hover {
+    background-color: #1048a4;
 }

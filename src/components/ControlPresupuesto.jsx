@@ -7,7 +7,8 @@ const ControlPresupuesto = ({
     setGastos, 
     presupuesto, 
     setPresupuesto,
-    setIsValidPresupuesto}) => {
+    setIsValidPresupuesto,
+    setNuevoPresupuesto}) => {
 
     const [porcentaje, setPorcentaje] = useState(0);
     const [disponible, setDisponible] = useState(0);
@@ -76,7 +77,13 @@ const ControlPresupuesto = ({
             <p>
                 <span>Gastado: </span>{formatearCantidad(gastado)}
             </p>
+
+            <button 
+                className="button__cambioPresupuesto"
+                onClick={() => setNuevoPresupuesto(true)}
+            >Cambiar Presupuesto</button>
         </div>
+
 
     </div>
   )
