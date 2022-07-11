@@ -23,6 +23,7 @@ html {
 }
 
 .fijar {
+    position: relative;
     overflow: hidden;
     height: 100vh;
 }
@@ -32,6 +33,10 @@ h1 {
 }
 h2 {
     font-size: 3rem;
+}
+
+h4 {
+    margin: 20px 0;
 }
 
 .sombra {
@@ -67,7 +72,8 @@ header h1 {
         width: 60rem;
     }
 }
-.formulario legend {
+.formulario legend,
+.ahorro__title {
     font-size: 3.6rem;
     text-align: center;
     display: block;
@@ -353,13 +359,13 @@ main {
 }
 
 .modal {
-    position: sticky;
+    position: absolute;
     background-color: rgb(0 0 0 / 0.92);
     top: 0;
-    left: 0;
     right: 0;
-    bottom: 0;
-    min-height: 100vh;
+    left: 0;
+    height: 100vh;
+    overflow: auto;
 }
 .modal .cerrar-modal {
     position: absolute;
@@ -469,4 +475,16 @@ body .modal {
 
 .button__cambioPresupuesto:hover {
     background-color: #1048a4;
+}
+
+/* Sección Ahorros */
+
+.ahorro__title {
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.ahorrosContainer {
+    height: 500px;
+    overflow: scroll;
 }

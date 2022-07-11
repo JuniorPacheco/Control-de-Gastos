@@ -6,13 +6,14 @@ const ListadoGastos = ({
   eliminarGasto,
   filtro,
   gastosFiltrados}) => {
+    const arrayGastosSinAhorro = gastos.filter(gasto => gasto.categoria !== 'ahorro')
   return (
       <div className="listado-gastos contenedor">
 
           {
             filtro ? (
               <>
-                <h2>{gastosFiltrados.length ? 'Gastos' : 'No Hay Gastos en esta categoría'}</h2>
+                <h2>{filtro === 'ahorro' ? 'Ahorros' : gastosFiltrados.length ? 'Gastos' : 'No Hay Gastos en esta categoría'}</h2>
                 {gastosFiltrados.map(gasto => (
                   <Gasto 
                   key={gasto.id}
@@ -25,7 +26,7 @@ const ListadoGastos = ({
             ) : (
               <>
                   <h2>{gastos.length ? 'Gastos' : 'No Hay Gastos Aún'}</h2>
-                  {gastos.map(gasto => (
+                  {arrayGastosSinAhorro.map(gasto => (
                     <Gasto 
                     key={gasto.id}
                     gasto={gasto}

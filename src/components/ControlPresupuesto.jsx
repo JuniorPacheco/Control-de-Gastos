@@ -13,9 +13,13 @@ const ControlPresupuesto = ({
     const [porcentaje, setPorcentaje] = useState(0);
     const [disponible, setDisponible] = useState(0);
     const [gastado, setGastado] = useState(0);
+    const [ahorros, setAhorros] = useState(0)
 
     useEffect(() => {
-        const totalGastado = gastos.reduce( (total, gasto) => gasto.cantidad + total, 0);
+        const arrayGastosSinAhorro = gastos.filter(gasto => gasto.categoria !== 'ahorro')
+        const soloAhorros = gastos.filter(gasto => gasto.categoria === 'ahorro')
+        const totalAhorros = soloAhorros.reduce( (total, gasto) => gasto.cantidad + total, 0);
+        const totalGastado = arrayGastosSinAhorro.reduce( (total, gasto) => gasto.cantidad + total, 0);
         const totalDisponible = presupuesto - totalGastado;
 
         //Calculo porcentaje
@@ -23,6 +27,7 @@ const ControlPresupuesto = ({
         
         setDisponible(totalDisponible);
         setGastado(totalGastado);
+        setAhorros(totalAhorros)
         setTimeout(() => {
             setPorcentaje(porcentajeGastado);
         }, 1200)
@@ -76,6 +81,10 @@ const ControlPresupuesto = ({
 
             <p>
                 <span>Gastado: </span>{formatearCantidad(gastado)}
+            </p>
+
+            <p>
+                <span>Total Ahorros: </span>{formatearCantidad(ahorros)}
             </p>
 
             <button 

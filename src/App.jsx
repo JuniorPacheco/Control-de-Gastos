@@ -90,7 +90,7 @@ function App() {
   }
 
   return (
-      <div className={modal ? 'fijar' : ''}>
+      <div className={modal || nuevoPresupuesto ? 'fijar' : ''}>
         <Header 
         gastos={gastos}
         setGastos={setGastos}
